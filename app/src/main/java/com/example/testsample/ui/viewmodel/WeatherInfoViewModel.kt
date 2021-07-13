@@ -20,6 +20,11 @@ class WeatherInfoViewModel : ViewModel() {
     val responseData = MutableLiveData<WeatherApiResult>()
     lateinit var weatherRepository:WeatherRepository
 
+    /**
+     * Start fetching weather information from server in separate thread.
+     * Updates the result into model class
+     * @see WeatherApiResult model.
+     */
     fun fetchWeatherInfo(){
         viewModelScope.launch(Dispatchers.IO) {
             val response = weatherRepository.getWeatherInfo("Ajmer","1a33bc270227041a6cbb5dd0159ed646")
