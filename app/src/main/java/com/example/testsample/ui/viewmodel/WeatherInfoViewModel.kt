@@ -8,6 +8,14 @@ import com.example.testsample.data.repository.WeatherRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * Project           : SampleMVVM
+ * File Name         : WeatherInfoViewModel
+ * Description       :
+ * Revision History  : version 1
+ * Date              : 13/07/21
+ * Original author   : Gajraj
+ */
 class WeatherInfoViewModel : ViewModel() {
     val responseData = MutableLiveData<WeatherApiResult>()
     lateinit var weatherRepository:WeatherRepository

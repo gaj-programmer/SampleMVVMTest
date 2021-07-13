@@ -15,6 +15,14 @@ import com.example.testsample.data.api.WeatherApiService
 import com.example.testsample.databinding.ActivityMainBinding
 import com.example.testsample.ui.viewmodel.WeatherInfoViewModel
 
+/**
+ * Project           : SampleMVVM
+ * File Name         : WeatherInfoActivity
+ * Description       :
+ * Revision History  : version 1
+ * Date              : 13/07/21
+ * Original author   : Gajraj
+ */
 class WeatherInfoActivity : AppCompatActivity() {
     private val TAG: String ="MainActivity"
     private lateinit var viewModel: WeatherInfoViewModel

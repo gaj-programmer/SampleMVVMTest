@@ -6,6 +6,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * Project           : SampleMVVM
+ * File Name         : RetrofitInstance
+ * Description       :
+ * Revision History  : version 1
+ * Date              : 13/07/21
+ * Original author   : Gajraj
+ */
 object RetrofitInstance {
     private var retrofit: Retrofit? = null
     private const val BASE_URL = "https://api.openweathermap.org/"
