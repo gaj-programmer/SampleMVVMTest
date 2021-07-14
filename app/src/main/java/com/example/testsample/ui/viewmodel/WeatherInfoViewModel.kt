@@ -19,7 +19,7 @@ import javax.inject.Inject
  * Original author   : Gajraj
  */
 @HiltViewModel
-class WeatherInfoViewModel @Inject constructor(private val weatherRepository:WeatherRepository) : ViewModel() {
+class WeatherInfoViewModel @Inject constructor(val weatherRepository:WeatherRepository) : ViewModel() {
     val responseData = MutableLiveData<WeatherApiResult>()
 
     /**

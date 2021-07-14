@@ -15,6 +15,14 @@ import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 import retrofit2.Response
 
+/**
+ * Project           : SampleMVVM
+ * File Name         : WeatherInfoViewModelTest
+ * Description       :
+ * Revision History  : version 1
+ * Date              : 13/07/21
+ * Original author   : Gajraj
+ */
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class WeatherInfoViewModelTest {
@@ -37,9 +45,8 @@ class WeatherInfoViewModelTest {
             doThrow(RuntimeException(errorMessage))
                 .`when`(weatherApiHelper).getWeatherInfo("Ajmer","1a33bc270227041a6cbb5dd0159ed646")
 
-            val viewModel = WeatherInfoViewModel()
+            val viewModel = WeatherInfoViewModel(WeatherRepository(weatherApiHelper))
             Assert.assertNotNull(viewModel)
-            viewModel.weatherRepository = WeatherRepository(weatherApiHelper)
 
             viewModel.fetchWeatherInfo()
             verify(weatherApiHelper).getWeatherInfo("Ajmer","1a33bc270227041a6cbb5dd0159ed646")
@@ -53,9 +60,8 @@ class WeatherInfoViewModelTest {
             doReturn(mock(Response::class.java))
                 .`when`(weatherApiHelper).getWeatherInfo("Ajmer","1a33bc270227041a6cbb5dd0159ed646")
 
-            val viewModel = WeatherInfoViewModel()
+            val viewModel = WeatherInfoViewModel(WeatherRepository(weatherApiHelper))
             Assert.assertNotNull(viewModel)
-            viewModel.weatherRepository = WeatherRepository(weatherApiHelper)
 
             viewModel.fetchWeatherInfo()
             verify(weatherApiHelper).getWeatherInfo("Ajmer","1a33bc270227041a6cbb5dd0159ed646")
