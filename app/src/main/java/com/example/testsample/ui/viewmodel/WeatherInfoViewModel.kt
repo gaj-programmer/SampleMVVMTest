@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.example.WeatherApiResult
 import com.example.testsample.data.repository.WeatherRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * Project           : SampleMVVM
@@ -16,9 +18,9 @@ import kotlinx.coroutines.launch
  * Date              : 13/07/21
  * Original author   : Gajraj
  */
-class WeatherInfoViewModel : ViewModel() {
+@HiltViewModel
+class WeatherInfoViewModel @Inject constructor(private val weatherRepository:WeatherRepository) : ViewModel() {
     val responseData = MutableLiveData<WeatherApiResult>()
-    lateinit var weatherRepository:WeatherRepository
 
     /**
      * Start fetching weather information from server in separate thread.
